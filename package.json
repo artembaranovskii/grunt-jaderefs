@@ -1,0 +1,23 @@
+{
+  "name": "grunt-jaderefs",
+  "version": "0.0.1",
+  "description": "Replaces references to non-optimized scripts or stylesheets on JADE files",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com:artembaranovskii/grunt-jaderefs.git"
+  },
+  "keywords": ["gruntplugin", "jaderefs"],
+  "author": {
+      "name": "Baranovskii Artem",
+      "email": "abaranovskiy@yandex.ru"
+  },
+  "engines" : {
+      "node": ">=0.8.0"
+  },
+   "devDependencies": {
+       "grunt": "~0.4.x"
+   },
+  "bugs": {
+    "url": "https://github.com/artembaranovskii/grunt-jaderefs/issues"
+  }
+}

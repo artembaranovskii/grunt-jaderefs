@@ -1,0 +1,19 @@
+!!! 5
+html
+head
+  title Example jade
+
+  //- build:css /static/css/compiled.css
+  link(rel='stylesheet', type='text/css', href='//#{baseUrl}/static/css/development.css')
+  // endbuild
+
+  body
+
+    // build:js /static/js/compiled/murally.js
+    script(type='text/javascript', src='//#{baseUrl}/static/js/compiled/external.js')
+    script(type='text/javascript', src='//#{baseUrl}/static/js/onefile.js')
+    script(type='text/javascript', src='//#{baseUrl}/static/js/other_file.js')
+    // endbuild
+
+    script
+      bootstrapLandingPage();

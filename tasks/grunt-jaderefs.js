@@ -203,6 +203,6 @@ module.exports = function (grunt) {
 
         // Create new path to assets
         block.dest = block.dest.replace(new RegExp('([.]' + block.type + ')'), filehash + '$1');
-        grunt.file.write(options.assets.dest + block.dest, combined);
+        grunt.file.write((options.assets.tmp || options.assets.dest) + block.dest, combined);
     }
 };

@@ -15,15 +15,15 @@ module.exports = function (grunt) {
         , path = require('path')
         , crypto = require('crypto')
 
-        // Start build pattern
-        //- build:[type] destination
+    // Start build pattern
+    //- build:[type] destination
         , regexBuild = /\/\/-*\s*build:(\w+)\s*(.+)\s*/
 
-        // End build pattern
-        //- endbuild
+    // End build pattern
+    //- endbuild
         , regexEnd = /\/\/-*\s*endbuild\s*/
 
-        // Assets pattern
+    // Assets pattern
         , regExpAssets = /(href|src)=["']([^'"]+)["']/;
 
 
@@ -92,7 +92,7 @@ module.exports = function (grunt) {
      *   src: [ '/css/normalize.css', '/css/main.css' ],
      *   raw: [ '    //- build:css /css/site.css',
      *          '    link(rel="stylesheet", href="/css/normalize.css")
-	 * 					'		 link(rel="stylesheet", href="/css/main.css")
+     *          '    link(rel="stylesheet", href="/css/main.css")
      *          '    //- endbuild'
      *        ]
      *  },
@@ -193,7 +193,7 @@ module.exports = function (grunt) {
             // Get relative path to assets
             filepath = '/' + path.relative('//#{baseUrl}', filepath);
 
-            return grunt.file.read(options.assetsSrcDir + filepath);
+            return grunt.file.read(options.assets.src + filepath);
         }).join(grunt.util.normalizelf(options.separator)) : '';
 
         // Calcuate file hash for versioning
@@ -203,6 +203,6 @@ module.exports = function (grunt) {
 
         // Create new path to assets
         block.dest = block.dest.replace(new RegExp('([.]' + block.type + ')'), filehash + '$1');
-        grunt.file.write(options.assetsDestDir + block.dest, combined);
+        grunt.file.write(options.assets.dest + block.dest, combined);
     }
 };

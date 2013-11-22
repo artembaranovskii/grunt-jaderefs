@@ -191,7 +191,7 @@ module.exports = function (grunt) {
         // Concatinate assets
         var combined = block.src ? block.src.map(function (filepath) {
             // Get relative path to assets
-            filepath = '/' + path.relative('//#{baseUrl}', filepath);
+            filepath = '/' + path.relative(options.assets.basePath||'', filepath);
 
             return grunt.file.read(options.assets.src + filepath);
         }).join(grunt.util.normalizelf(options.separator)) : '';
